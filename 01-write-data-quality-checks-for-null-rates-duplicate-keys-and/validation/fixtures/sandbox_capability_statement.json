@@ -1,0 +1,8 @@
+{
+  "sandbox": "Nuvepro GenAI Sandbox",
+  "authorized_python_repository_editing_available": false,
+  "pytest_execution_available": false,
+  "required_publication_rule": "A failed partition must not be published.",
+  "blocking_observation": "Completion is blocked until the sandbox provides authorized Python repository editing and pytest execution.",
+  "copilot_evidence_rule": "Microsoft 365 Copilot output is a reviewed specification, not executable proof."
+}

@@ -1,0 +1,121 @@
+{
+  "implementation_decision": {
+    "decision_id": "payment-quality-execution-readiness",
+    "status": "blocked",
+    "executable_validation": "not_executed",
+    "decision_basis": "The corrected specification is ready for implementation review, but the supplied sandbox capability statement does not authorize Python editing or pytest execution. Microsoft 365 Copilot output is specification evidence only and does not prove that any data-quality check passed.",
+    "check_execution_status": {
+      "missing_value_rate": "not_executed",
+      "composite_key_duplicates": "not_executed",
+      "amount_range": "not_executed"
+    },
+    "blocking_tech_stack_observation": {
+      "category": "tech_stack",
+      "available_tool": "Microsoft 365 Copilot",
+      "python_editing_authorized": false,
+      "pytest_execution_authorized": false,
+      "consequence": "Executable validation is blocked; no checks are claimed to have passed."
+    },
+    "failed_partition_report": {
+      "scope": "partition",
+      "emit_when": "any configured data-quality check fails",
+      "required_fields": [
+        "check_name",
+        "partition",
+        "affected_count",
+        "threshold_or_limit",
+        "representative_record_ids"
+      ],
+      "representative_identifier_policy": "Include only non-sensitive payment record identifiers; do not include names, account numbers, or complete source records.",
+      "maximum_representative_identifiers": 10,
+      "field_definitions": {
+        "check_name": {
+          "type": "string",
+          "description": "Stable name of the failed data-quality check."
+        },
+        "partition": {
+          "type": "string",
+          "description": "The failed input partition identifier."
+        },
+        "affected_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of records contributing to the partition-level failure."
+        },
+        "threshold_or_limit": {
+          "type": "string",
+          "description": "Configured threshold or inclusive limit used to evaluate the check."
+        },
+        "representative_record_ids": {
+          "type": "array",
+          "items": "string",
+          "description": "Up to ten representative non-sensitive identifiers for investigation."
+        }
+      }
+    }
+  },
+  "corrected_rule_semantics": {
+    "missing_value_rate": {
+      "denominator_basis": "all_records_in_partition",
+      "missing_value_semantics": [
+        "null",
+        "empty_string",
+        "whitespace_only"
+      ]
+    },
+    "composite_key_duplicates": {
+      "key_columns": [
+        "partner_id",
+        "payment_id"
+      ],
+      "conflict_type": "staged_key_conflict"
+    },
+    "amount_range": {
+      "minimum_amount": 0.01,
+      "maximum_amount": 10000.0,
+      "minimum_inclusive": true,
+      "maximum_inclusive": true,
+      "boundary_classification": {
+        "0.01": "in_range",
+        "10000.00": "in_range"
+      }
+    }
+  },
+  "reconciled_expected_outcomes": {
+    "pay-clean-001": {
+      "missing_value_rate": "pass",
+      "composite_key_duplicates": "pass",
+      "amount_range": "pass"
+    },
+    "pay-minimum-001": {
+      "missing_value_rate": "pass",
+      "composite_key_duplicates": "pass",
+      "amount_range": "pass"
+    },
+    "pay-maximum-001": {
+      "missing_value_rate": "pass",
+      "composite_key_duplicates": "pass",
+      "amount_range": "pass"
+    },
+    "pay-blank-001": {
+      "missing_value_rate": "fail",
+      "composite_key_duplicates": "pass",
+      "amount_range": "pass"
+    },
+    "pay-conflict-a": {
+      "missing_value_rate": "pass",
+      "composite_key_duplicates": "fail",
+      "amount_range": "pass"
+    },
+    "pay-conflict-b": {
+      "missing_value_rate": "pass",
+      "composite_key_duplicates": "fail",
+      "amount_range": "pass"
+    },
+    "pay-over-maximum-001": {
+      "missing_value_rate": "pass",
+      "composite_key_duplicates": "pass",
+      "amount_range": "fail"
+    }
+  }
+}

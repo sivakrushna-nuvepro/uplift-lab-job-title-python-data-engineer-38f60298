@@ -1,0 +1,74 @@
+{
+  "artifact": {
+    "title": "Write data-quality checks for null rates, duplicate keys, and out-of-range amounts.",
+    "kind": "DATA_QUALITY_IMPLEMENTATION_SPECIFICATION",
+    "schema_version": "payment-quality-specification.v1",
+    "assistance": "Microsoft 365 Copilot",
+    "review_status": "LEARNER_TO_REVIEW"
+  },
+  "partition": {
+    "column": "LEARNER_TO_COMPLETE",
+    "expected_value": "LEARNER_TO_COMPLETE"
+  },
+  "checks": {
+    "missing_values": {
+      "field": "LEARNER_TO_COMPLETE",
+      "denominator_transaction_types": ["LEARNER_TO_COMPLETE"],
+      "blank_after_trimming_is_missing": null,
+      "maximum_rate": null,
+      "threshold_is_inclusive": null,
+      "calculation": "LEARNER_TO_COMPLETE",
+      "structural_exclusions": ["LEARNER_TO_COMPLETE"]
+    },
+    "duplicate_keys": {
+      "key_columns": ["LEARNER_TO_COMPLETE"],
+      "within_batch_rule": "LEARNER_TO_COMPLETE",
+      "staged_conflict_rule": "LEARNER_TO_COMPLETE",
+      "staged_partition_column": "LEARNER_TO_COMPLETE",
+      "conflicting_staged_statuses": ["LEARNER_TO_COMPLETE"],
+      "ignored_staged_statuses": ["LEARNER_TO_COMPLETE"],
+      "within_batch_and_staged_conflicts_reported_separately": null
+    },
+    "amounts": {
+      "currency": "LEARNER_TO_COMPLETE",
+      "precision": null,
+      "payment_minimum": "LEARNER_TO_COMPLETE",
+      "payment_maximum": "LEARNER_TO_COMPLETE",
+      "boundaries_are_inclusive": null,
+      "adjustment_minimum": "LEARNER_TO_COMPLETE",
+      "adjustment_maximum": "LEARNER_TO_COMPLETE",
+      "zero_adjustment_allowed": null,
+      "reversal_requires_active_original": null,
+      "reversal_must_equal_negative_original_amount": null,
+      "reason_codes": ["LEARNER_TO_COMPLETE"]
+    }
+  },
+  "expected_outcomes": {
+    "clean": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}},
+    "null_threshold_boundary": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}},
+    "amount_boundaries": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}},
+    "concentrated_nulls": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}},
+    "duplicates": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}},
+    "invalid_amounts": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}},
+    "mixed_defects": {"partition": {}, "decision": "LEARNER_TO_COMPLETE", "publishable": null, "failed_record_ids": [], "checks": {}}
+  },
+  "failure_report": {
+    "required_top_level_fields": ["LEARNER_TO_COMPLETE"],
+    "non_sensitive_identifier_fields": ["LEARNER_TO_COMPLETE"],
+    "prohibited_sensitive_fields": ["LEARNER_TO_COMPLETE"],
+    "missing_value_failure_fields": ["LEARNER_TO_COMPLETE"],
+    "duplicate_failure_fields": ["LEARNER_TO_COMPLETE"],
+    "amount_failure_fields": ["LEARNER_TO_COMPLETE"]
+  },
+  "readiness_finding": {
+    "publication_rule": "LEARNER_TO_COMPLETE",
+    "implementation_status": "LEARNER_TO_COMPLETE",
+    "blocking_observation": "LEARNER_TO_COMPLETE",
+    "unavailable_capabilities": ["LEARNER_TO_COMPLETE"],
+    "completion_requires": ["LEARNER_TO_COMPLETE"],
+    "copilot_evidence_rule": "LEARNER_TO_COMPLETE",
+    "python_repository_edited": null,
+    "pytest_executed": null,
+    "executable_proof": null
+  }
+}

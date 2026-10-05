@@ -1,0 +1,60 @@
+{
+  "taskId": "1",
+  "moduleNumber": 1,
+  "sandboxConfig": {
+    "environment": "browser-workspace",
+    "tools": [
+      {
+        "name": "Microsoft 365 Copilot",
+        "purpose": "Assist with reviewing the supplied contract, cases, and implementation specification."
+      },
+      {
+        "name": "Browser JSON editor",
+        "purpose": "Edit the learner-owned specification and check JSON syntax without executable repository access."
+      },
+      {
+        "name": "Browser workspace editor",
+        "purpose": "Inspect supplied JSON materials and author the reviewed JSON specification without claiming Python execution."
+      },
+      {
+        "name": "workspace-editor",
+        "purpose": "Inspect repository files and maintain the repository ignore rules."
+      },
+      {
+        "name": "terminal",
+        "purpose": "Run pytest and inspect repository status when execution capability is available."
+      },
+      {
+        "name": "Python pytest test seat",
+        "purpose": "Run the frozen offline validation suite when authorized and write the local machine-readable report."
+      },
+      {
+        "name": "Browser file editor",
+        "purpose": "Inspect supplied JSON evidence and edit the learner-owned specification document."
+      },
+      {
+        "name": "Python",
+        "purpose": "Run the frozen offline validation suite in the separate Factory validation seat."
+      },
+      {
+        "name": "pytest",
+        "purpose": "Validate the reviewed specification and produce a deterministic local report."
+      },
+      {
+        "name": "Browser workspace file editor",
+        "purpose": "Inspect supplied materials and edit the learner-owned payment quality specification."
+      },
+      {
+        "name": "Workspace JSON editor",
+        "purpose": "Inspect supplied materials and edit the learner-owned JSON specification."
+      }
+    ],
+    "preloadFiles": [
+      "practice_project/README.md",
+      "practice_project/materials/payment_quality_cases.json",
+      "practice_project/materials/sandbox_capability_statement.json",
+      "practice_project/payment_quality_specification.json"
+    ]
+  },
+  "moduleHash": "3df83320"
+}
